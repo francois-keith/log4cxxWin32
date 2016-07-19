@@ -6,7 +6,12 @@ set(PROJECT_NAME liblog4cxx)
 set(PROJECT_DESCRIPTION "log4cxx library")
 set(PROJECT_URL "")
 set(PROJECT_VERSION 0.10.0)    # [TODO] retrieve this number automatically from lo4cxx/pom.xml
-SET(PROJECT_DEBUG_POSTFIX "_d")
+
+# Comment the debug postfix because
+# 1. I want to compile in release.
+# 2. The debug suffix is attached to the lib name with MSVC with Visual Studio because the 
+# test     IF(DEFINED CMAKE_CONFIGURATION_TYPES) l.148 is not null : it equals Debug; Release; ...
+# SET(PROJECT_DEBUG_POSTFIX "_d")
 
 SETUP_PROJECT()
 
